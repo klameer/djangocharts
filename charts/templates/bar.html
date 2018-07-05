@@ -1,0 +1,36 @@
+<canvas id="bar" width="300" height="300"></canvas>
+<script type="text/javascript">
+  var endpoint = '/api/bar';
+  $.ajax({
+    method: "GET",
+    url: endpoint,
+    success: function(data){
+      var ctx = document.getElementById("bar").getContext("2d");
+      options = {
+        title: {
+          display: true,
+          text: "Lorries per Month"
+        },
+        responsive: true,
+        scales:{
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      }
+      var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options,
+      });
+      console.log(data);
+    },
+    error: function(error_data){
+      console.log("error");
+      console.log(error_data);
+    }
+  });
+</script>
