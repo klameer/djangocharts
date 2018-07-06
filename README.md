@@ -13,4 +13,4 @@ The repository contains all the code with some additions that were in the blog p
 > python manage.py runserver
 ```
 
-Go to https://127.0.0.1:8000 and enjoy!
+Go to http://127.0.0.1:8000 and enjoy!
